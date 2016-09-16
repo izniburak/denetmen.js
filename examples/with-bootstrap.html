@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>denetmen.js</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  </head>
+  <body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1>Example 1 - No Animation</h1>
+				<form action="javascript:alert('success! form1 submited.')" id="example-form1" name="form1" method="post">
+					<div class="form-group">
+						<input type="text" name="name" class="form-control" data-denetmen="Please enter a name!" placeholder="Name..." />
+					</div>
+					<div class="form-group">
+						<input type="text" name="surname" class="form-control" placeholder="Surname..." />
+					</div>
+					<div class="form-group">
+						<input type="text" name="email" class="form-control" data-denetmen="Please enter a valid e-mail!" placeholder="E-Mail..." />
+					</div>
+					<div class="form-group">
+						<select name="city" class="form-control" data-denetmen="Please select a city!">
+							<option value="">Select</option>
+							<option value="ank">Ankara</option>
+							<option value="ist">İstanbul</option>
+							<option value="izm">İzmir</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<textarea name="message" class="form-control" data-denetmen="" placeholder="Please enter a message!"></textarea>
+					</div>
+					<div class="form-group">
+						<button type="submit" name="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-6">
+				<h1>Code:</h1>
+				<pre>
+$("form#example-form1").denetmen({
+  modal:{
+    title: "Oppss!",
+    button: "Okey",
+    buttonClass: "danger",
+    fade: false
+  }
+});</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<h1>Example 2 - Fade Animation</h1>
+				<form action="javascript:alert('success! form2 submited.')" id="example-form2" name="form2" method="post">
+					<div class="form-group">
+						<input type="text" name="name" class="form-control" data-denetmen="Please enter a name!" placeholder="Name..." />
+					</div>
+					<div class="form-group">
+						<input type="text" name="surname" class="form-control" placeholder="Surname..." />
+					</div>
+					<div class="form-group">
+						<input type="text" name="email" class="form-control" data-denetmen="Please enter a valid e-mail!" placeholder="E-Mail..." />
+					</div>
+					<div class="form-group">
+						<select name="city" class="form-control" data-denetmen="Please select a city!">
+							<option value="">Select</option>
+							<option value="ank">Ankara</option>
+							<option value="ist">İstanbul</option>
+							<option value="izm">İzmir</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<textarea name="message" class="form-control" data-denetmen="" placeholder="Please enter a message!"></textarea>
+					</div>
+					<div class="form-group">
+						<button type="submit" name="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-6">
+				<h1>Code:</h1>
+				<pre>
+$("form#example-form2").denetmen({
+  modal:{
+    title: "Oppss!",
+    button: "Okey",
+    buttonClass: "success",
+    fade: true
+  }
+});</pre>
+			</div>
+		</div>
+	</div>
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- include Bootstrap (http://getbootstrap.com/) -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- include denetmen.js -->
+    <script src="../src/denetmen.js"></script>
+	<script>
+		$(function()
+		{
+			// form1 
+			$("form#example-form1").denetmen({
+				modal: {
+					title: "Oppss!",
+					button: "Okey",
+					buttonClass: "danger",
+					fade: false
+				}
+			});
+			
+			// form2
+			$("form#example-form2").denetmen({
+				modal: {
+					title: "Oppss!",
+					button: "Okey",
+					buttonClass: "success",
+					fade: true
+				}
+			});
+		});
+	</script>
+  </body>
+</html>

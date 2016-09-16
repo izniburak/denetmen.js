@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>denetmen.js</title>
+  </head>
+  <body>
+    <h1>Example 1:</h1>
+	<form action="javascript:alert('success! form submited.')" id="form1" name="form1" method="post">
+		<input type="text" name="name" data-denetmen="Please enter a name!" placeholder="Name..." /><br />
+		<input type="text" name="surname" placeholder="Surname..." /><br />
+		<input type="text" name="email" data-denetmen="Please enter a valid e-mail!" placeholder="E-Mail..." /><br />
+		<select name="city" data-denetmen="Please select a city!">
+			<option value="">Seçiniz</option>
+			<option value="ank">Ankara</option>
+			<option value="ist">İstanbul</option>
+			<option value="izm">İzmir</option>
+		</select><br />
+		<textarea name="message" data-denetmen="Please enter a message!" placeholder="Message..."></textarea><br />
+		<input type="submit" name="submit" value="Ok"/>
+	</form>
+	<h2>Code:</h2>
+	<pre>$("form#example-form2").denetmen();</pre>
+	<hr />
+	
+	<h1>Example 2:</h1>
+	<form action="javascript:alert('success! form submited.')" id="form2" name="form2" method="post">
+		<input type="text" name="name" placeholder="Name..." data-required /><br />
+		<input type="text" name="surname" placeholder="Surname..." /><br />
+		<input type="text" name="email" data-required="Please enter a valid e-mail!" placeholder="E-Mail..." /><br />
+		<select name="city" data-required="Please select a city!">
+			<option value="">Seçiniz</option>
+			<option value="ank">Ankara</option>
+			<option value="ist">İstanbul</option>
+			<option value="izm">İzmir</option>
+		</select><br />
+		<textarea name="message" data-required="Please enter a message!" placeholder="Message..."></textarea><br />
+		Status: <input type="checkbox" name="status" value="1" data-required="" /><br />
+		<input type="submit" name="submit" value="Ok"/>
+	</form>
+	<h2>Code:</h2>
+	<pre>
+$("form#form2").denetmen({
+  item: "required",
+  highlight: false
+});</pre>
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- include denetmen.js -->
+    <script src="../src/denetmen.js"></script>
+	<script>
+		$(function()
+		{
+			// form1
+			$("form#form1").denetmen();
+			
+			// form2
+			$("form#form2").denetmen({
+				item: "required",
+				highlight: false
+			});
+		});
+	</script>
+  </body>
+</html>
