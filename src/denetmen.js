@@ -1,6 +1,5 @@
 /**
  * denetmen.js (for jQuery)
- * version: 1.0.0
  *
  * author: @izniburak <info@burakdemirtas.org>
  * url: https://github.com/izniburak/denetmen.js 
@@ -23,7 +22,8 @@
         var o = $.extend({}, $.fn.denetmen.defaults, options);
         var message = null;
         
-        $('html head').append('<style id="denetmenjs">.denetmenjs-require{border-color:#da0000;background-color:#fedad9}</style>');
+		if(o.highlight)
+			$('html head').append('<style id="denetmenjs">.denetmenjs-require{border-color:#da0000;background-color:#fedad9}</style>');
         
         $($this).submit(function()
         {
@@ -71,9 +71,12 @@
                 return false;
         });
         
-        $($this).on('focus', '.denetmenjs-require', function()
-        {
-            $(this).removeClass('denetmenjs-require');
-        });
+		if(o.highlight)
+		{
+			$($this).on('focus', '.denetmenjs-require', function()
+			{
+				$(this).removeClass('denetmenjs-require');
+			});
+		}
     };
 })(jQuery);
